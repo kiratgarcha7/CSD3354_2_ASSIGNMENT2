@@ -6,7 +6,19 @@ using System.Threading.Tasks;
 
 namespace CSD3354_2_ASSIGNMENT2
 {
-
+    public delegate void MyDelegate();
+    public class DelegateExercises : MyDelegate
+    {
+        void Method1()
+        {
+            System.Console.WriteLine("Method1");
+        }
+        public void Method3()
+        {
+            MyDelegate myDelegate = new MyDelegate(Method1);
+            myDelegate();
+        }
+    }
     public class program
     {
 
@@ -21,21 +33,6 @@ namespace CSD3354_2_ASSIGNMENT2
         }
     }
 
-    public delegate void MyDelegate();
-    public class DelegateExercises
-    {
-
-        void Method1()
-        {
-            System.Console.WriteLine("Method1");
-        }
-        public void Method3()
-        {
-            MyDelegate myDelegate = new MyDelegate(Method1);
-            myDelegate();
-        }
 
 
-
-    }
 }
